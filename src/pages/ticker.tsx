@@ -2,6 +2,7 @@ import { NextPage } from "next";
 import ArrowLeft from "../../public/assets/icon/arrow-left.svg";
 import Brush from "../../public/assets/icon/brush.svg";
 import TickerModel from "../../public/assets/icon/ticker-model-1.png";
+import Search from "../../public/assets/icon/search.svg";
 import Image from "next/image";
 import { useContext, useState } from "react";
 import { TickerContext } from "../contexts/TickerContext";
@@ -93,8 +94,8 @@ const Ticker: NextPage = () => {
                     {/* search box */}
                     <div className="bg-[#F2F1F9] h-14 rounded-lg relative flex items-center">
                         <div className="h-full aspect-square p-4">
-                            <img
-                                src="assets/icon/search.svg"
+                            <Image
+                                src={Search}
                                 alt="search"
                                 className="h-full w-full object-contain"
                             />
@@ -140,15 +141,18 @@ const Ticker: NextPage = () => {
                                         className="flex items-center justify-between"
                                     >
                                         <div className="flex items-center">
-                                            <img
-                                                src={`https://s3-symbol-logo.tradingview.com/crypto/XTVC${
-                                                    symbol === "GRT"
-                                                        ? "GRAPH"
-                                                        : symbol
-                                                }--big.svg`}
-                                                className="h-9 w-9 object-contain rounded-full mr-4"
-                                                alt="icon"
-                                            />
+                                            <div className="h-9 w-9 object-contain rounded-full overflow-hidden mr-4">
+                                                <Image
+                                                    src={`https://s3-symbol-logo.tradingview.com/crypto/XTVC${
+                                                        symbol === "GRT"
+                                                            ? "GRAPH"
+                                                            : symbol
+                                                    }--big.svg`}
+                                                    width={36}
+                                                    height={36}
+                                                    alt="icon"
+                                                />
+                                            </div>
                                             <p className="text-[#3F3D56] font-semibold text-lg min-w-[48px]">
                                                 {symbol}
                                             </p>
@@ -204,15 +208,18 @@ const Ticker: NextPage = () => {
                                         className="flex items-center justify-between"
                                     >
                                         <div className="flex items-center">
-                                            <img
-                                                src={`https://s3-symbol-logo.tradingview.com/crypto/XTVC${
-                                                    symbol === "GRT"
-                                                        ? "GRAPH"
-                                                        : symbol
-                                                }--big.svg`}
-                                                className="h-9 w-9 object-contain rounded-full mr-4"
-                                                alt="icon"
-                                            />
+                                            <div className="h-9 w-9 object-contain rounded-full overflow-hidden mr-4">
+                                                <Image
+                                                    src={`https://s3-symbol-logo.tradingview.com/crypto/XTVC${
+                                                        symbol === "GRT"
+                                                            ? "GRAPH"
+                                                            : symbol
+                                                    }--big.svg`}
+                                                    width={36}
+                                                    height={36}
+                                                    alt="icon"
+                                                />
+                                            </div>
                                             <p className="text-[#3F3D56] font-semibold text-lg min-w-[48px]">
                                                 {symbol}
                                             </p>
