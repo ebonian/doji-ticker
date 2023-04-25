@@ -52,31 +52,37 @@ const PWAContext: React.FC<PWAProps> = ({ children }) => {
         }
     }, []);
 
-    if (process.env.NODE_ENV === "development" ? !isInstalled : isInstalled) {
-        return (
-            <PWAState.Provider value={{ os, setOs, getMobileOperatingSystem }}>
-                {children}
-            </PWAState.Provider>
-        );
-    } else {
-        return (
-            <main className="h-screen w-full flex flex-col justify-between p-5 text-center overflow-hidden">
-                <span className="h-full flex-grow grid place-content-center text-center pt-32">
-                    <h1 className="text-4xl font-bold text-[#1F1F75]">
-                        DOJI TICKER
-                    </h1>
-                    <h2 className="text-lg font-semibold text-[#A9A9F2]">
-                        TESTING APPLICATION
-                    </h2>
-                </span>
-                <span className="h-full flex-grow flex justify-center flex-col">
-                    <span>{`Press the share button`}</span>
-                    <span>{`Select "Add to Home Screen"`}</span>
-                    <span>{`Press the "Add" button`}</span>
-                </span>
-            </main>
-        );
-    }
+    // if (process.env.NODE_ENV === "development" ? !isInstalled : isInstalled) {
+    //     return (
+    //         <PWAState.Provider value={{ os, setOs, getMobileOperatingSystem }}>
+    //             {children}
+    //         </PWAState.Provider>
+    //     );
+    // } else {
+    //     return (
+    //         <main className="h-screen w-full flex flex-col justify-between p-5 text-center overflow-hidden">
+    //             <span className="h-full flex-grow grid place-content-center text-center pt-32">
+    //                 <h1 className="text-4xl font-bold text-[#1F1F75]">
+    //                     DOJI TICKER
+    //                 </h1>
+    //                 <h2 className="text-lg font-semibold text-[#A9A9F2]">
+    //                     TESTING APPLICATION
+    //                 </h2>
+    //             </span>
+    //             <span className="h-full flex-grow flex justify-center flex-col">
+    //                 <span>{`Press the share button`}</span>
+    //                 <span>{`Select "Add to Home Screen"`}</span>
+    //                 <span>{`Press the "Add" button`}</span>
+    //             </span>
+    //         </main>
+    //     );
+    // }
+
+    return (
+        <PWAState.Provider value={{ os, setOs, getMobileOperatingSystem }}>
+            {children}
+        </PWAState.Provider>
+    );
 };
 
 export default PWAContext;
