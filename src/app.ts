@@ -10,6 +10,10 @@ async function main() {
     app.use(cors());
     app.use(express.json());
 
+    app.get("/", (req, res) => {
+        res.send("Hello World!");
+    });
+
     app.post("/get-prop-value", async (req, res) => {
         const body = req.body;
         const indice = parseInt(body.indice) as 2 | 3 | 4;
