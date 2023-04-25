@@ -23,10 +23,6 @@ class MyDocument extends Document {
                         name="apple-mobile-web-app-title"
                         content="Doji Ticker"
                     />
-                    <meta
-                        name="viewport"
-                        content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
-                    />
                     <link rel="manifest" href="/manifest.json" />
                     <link
                         href="/icons/icon-16x16.png"
