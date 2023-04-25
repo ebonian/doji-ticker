@@ -10,7 +10,6 @@ async function main() {
     app.use(
         cors({
             origin: ["https://ticker.doji.space", "http://localhost:3000"],
-            credentials: true,
         })
     );
     app.use(express.json());
