@@ -35,7 +35,7 @@ const Home: NextPage = () => {
                                             "Ticker Not Found"
                                         )
                                     }
-                                    className="w-full text-center py-2.5 cursor-pointer rounded-md bg-[#6A6AFF] bg-opacity-20 text-[#6A6AFF] font-bold"
+                                    className="w-full text-center py-2.5 rounded-md bg-[#6A6AFF] bg-opacity-20 text-[#6A6AFF] font-bold"
                                 >
                                     Connect
                                 </div>
@@ -65,7 +65,7 @@ const Home: NextPage = () => {
                 <div>
                     <div
                         onClick={() => setShowProvisionModal(true)}
-                        className="bg-[#D5D5F5] rounded-full py-1.5 px-4 flex items-center space-x-2 cursor-pointer"
+                        className="bg-[#D5D5F5] rounded-full py-1.5 px-4 flex items-center space-x-2"
                     >
                         <div className="relative w-5 h-5 flex justify-center">
                             <div className="bg-[#6A6AFF] absolute top-0 bottom-0 w-[5px] rounded-full"></div>

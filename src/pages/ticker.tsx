@@ -43,7 +43,12 @@ const Ticker: NextPage = () => {
                     </p>
                 </div>
                 <div className="bg-[#DFDFE7] rounded-full grid place-content-center w-12 h-12">
-                    <Image src={Brush} alt="Customize Icon" />
+                    <Image
+                        src={Brush}
+                        priority
+                        loading="eager"
+                        alt="Customize Icon"
+                    />
                 </div>
             </header>
             <div className="pt-24 px-5 space-y-3 font-sans z-20 absolute">
@@ -76,6 +81,8 @@ const Ticker: NextPage = () => {
                                             height={44}
                                             className="h-11 w-11 object-contain rounded-full"
                                             alt="icon"
+                                            priority
+                                            loading="eager"
                                         />
                                         <p className="font-semibold text-[#4e4b67]">
                                             {coin}
@@ -96,6 +103,8 @@ const Ticker: NextPage = () => {
                         <div className="h-full aspect-square p-4">
                             <Image
                                 src={Search}
+                                priority
+                                loading="eager"
                                 alt="search"
                                 className="h-full w-full object-contain"
                             />
@@ -148,6 +157,8 @@ const Ticker: NextPage = () => {
                                                             ? "GRAPH"
                                                             : symbol
                                                     }--big.svg`}
+                                                    priority
+                                                    loading="eager"
                                                     width={36}
                                                     height={36}
                                                     alt="icon"
@@ -169,7 +180,7 @@ const Ticker: NextPage = () => {
                                                 //     )
                                                 // );
                                             }}
-                                            className="relative w-4 h-4 flex justify-center cursor-pointer"
+                                            className="relative w-4 h-4 flex justify-center"
                                         >
                                             <div className="bg-[#AEABBF] absolute top-[6px] left-0 right-0 h-[4px] rounded-full"></div>
                                         </div>
@@ -215,6 +226,8 @@ const Ticker: NextPage = () => {
                                                             ? "GRAPH"
                                                             : symbol
                                                     }--big.svg`}
+                                                    priority
+                                                    loading="eager"
                                                     width={36}
                                                     height={36}
                                                     alt="icon"
@@ -242,7 +255,7 @@ const Ticker: NextPage = () => {
                                                     },
                                                 ]);
                                             }}
-                                            className="relative w-4 h-4 flex justify-center cursor-pointer"
+                                            className="relative w-4 h-4 flex justify-center"
                                         >
                                             <div className="bg-[#6A6AFF] absolute top-0 bottom-0 w-[4px] rounded-full"></div>
                                             <div className="bg-[#6A6AFF] absolute top-[6px] left-0 right-0 h-[4px] rounded-full"></div>
