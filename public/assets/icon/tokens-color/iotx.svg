@@ -1,0 +1,33 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_16_1130)">
+<path d="M16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16C0 24.8366 7.16344 32 16 32Z" fill="#00D4D5"/>
+<path d="M16.519 5V10.457L21.257 7.732L16.519 5Z" fill="white"/>
+<path opacity="0.9" d="M21.257 7.73199V13.189L25.994 10.457L21.257 7.73199Z" fill="white"/>
+<path opacity="0.8" d="M16.519 10.457V15.914L21.257 13.189L16.519 10.457ZM21.257 13.19V18.646L25.994 15.914L21.257 13.19Z" fill="white"/>
+<path opacity="0.8" d="M16.519 15.914V21.371L21.257 18.646L16.519 15.914Z" fill="white"/>
+<path d="M21.257 18.646V24.103L25.994 21.371L21.257 18.646Z" fill="white"/>
+<path opacity="0.4" d="M4.273 10.273V15.73L9.011 12.998L4.273 10.273Z" fill="white"/>
+<path opacity="0.2" d="M10.25 12.302V17.759L14.98 15.034L10.25 12.302Z" fill="white"/>
+<path opacity="0.3" d="M6.738 15.753V21.21L11.475 18.478L6.738 15.753Z" fill="white"/>
+<path opacity="0.9" d="M9.86 19.871V25.328L14.59 22.596L9.86 19.871Z" fill="white"/>
+<path opacity="0.7" d="M16.48 22.22V27.678L21.21 24.945L16.48 22.22Z" fill="white"/>
+<path opacity="0.9" d="M11.039 9.60699V15.065L15.769 12.34L11.039 9.60699Z" fill="white"/>
+<path opacity="0.8" d="M16.519 5V10.457L11.781 7.732L16.519 5Z" fill="white"/>
+<path opacity="0.6" d="M11.039 7.32001V12.776L6.3 10.044L11.039 7.32001Z" fill="white"/>
+<path opacity="0.6" d="M15.777 10.02V15.478L11.039 12.745L15.777 10.02Z" fill="white"/>
+<path opacity="0.95" d="M10.228 12.302V17.759L5.49 15.034L10.228 12.302Z" fill="white"/>
+<path opacity="0.6" d="M16.519 15.914V21.371L11.789 18.646L16.519 15.914Z" fill="white"/>
+<path opacity="0.55" d="M6.738 17.185V22.642L2 19.909L6.738 17.185Z" fill="white"/>
+<path d="M25.994 10.457V15.914L21.257 13.189L25.994 10.457Z" fill="white"/>
+<path opacity="0.95" d="M21.257 13.19V18.646L16.519 15.914L21.257 13.19Z" fill="white"/>
+<path opacity="0.9" d="M25.994 15.914V21.371L21.257 18.646L25.994 15.914Z" fill="white"/>
+<path opacity="0.7" d="M21.257 18.646V24.103L16.519 21.371L21.257 18.646Z" fill="white"/>
+<path opacity="0.4" d="M15.47 20.92V26.377L10.733 23.652L15.47 20.92Z" fill="white"/>
+<path d="M21.257 7.73199V13.189L16.519 10.457L21.257 7.73199Z" fill="white"/>
+</g>
+<defs>
+<clipPath id="clip0_16_1130">
+<rect width="32" height="32" fill="white"/>
+</clipPath>
+</defs>
+</svg>
