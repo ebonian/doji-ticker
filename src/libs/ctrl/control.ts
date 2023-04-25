@@ -1,4 +1,6 @@
-import sendData from "./transport";
+import sendData from "../transport";
+import { typeToString } from "./type";
+import { statusToString } from "../status";
 
 import CtrlSchema from "./proto/esp_local_ctrl_pb";
 
@@ -17,17 +19,29 @@ export const getPropertyValue = async (indice: 2 | 3 | 4) => {
 
     const bufferResult = await sendData("/esp_local_ctrl/control", buffer);
 
-    const response = CtrlSchema.LocalCtrlMessage.deserializeBinary(bufferResult)
-        .getRespGetPropVals()
-        ?.getPropsList()[0];
+    const response =
+        CtrlSchema.LocalCtrlMessage.deserializeBinary(
+            bufferResult
+        ).getRespGetPropVals();
 
-    const name = response?.getName();
+    const prop = response?.getPropsList()[0];
 
-    const type = response?.getType();
+    const status = response?.getStatus();
 
-    var valueString = new TextDecoder().decode(response?.getValue_asU8());
+    const statusString = statusToString(status);
 
-    return { name: name, type: type, value: valueString };
+    const name = prop?.getName();
+
+    const type = prop?.getType();
+
+    const typeString = typeToString(type);
+
+    var valueString = new TextDecoder().decode(prop?.getValue_asU8());
+
+    return {
+        status: statusString,
+        prop: { name: name, type: typeString, value: valueString },
+    };
 };
 
 export const setPropertyValue = async (indice: 2 | 3 | 4, value: string) => {
@@ -56,5 +70,9 @@ export const setPropertyValue = async (indice: 2 | 3 | 4, value: string) => {
             bufferResult
         ).getRespSetPropVals();
 
-    return response?.toObject();
+    const status = response?.getStatus();
+
+    const statusString = statusToString(status);
+
+    return { status: statusString };
 };
