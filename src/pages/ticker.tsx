@@ -1,6 +1,7 @@
 import { NextPage } from "next";
 import ArrowLeft from "../../public/assets/icon/arrow-left.svg";
 import Brush from "../../public/assets/icon/brush.svg";
+import TickerModel from "../../public/assets/icon/ticker-model-1.png";
 import Image from "next/image";
 import { useContext, useState } from "react";
 import { TickerContext } from "../contexts/TickerContext";
@@ -25,7 +26,12 @@ const Ticker: NextPage = () => {
                     onClick={() => router.back()}
                     className="bg-[#DFDFE7] rounded-full grid place-content-center w-12 h-12"
                 >
-                    <Image src={ArrowLeft} alt="Back Icon" />
+                    <Image
+                        priority
+                        loading="eager"
+                        src={ArrowLeft}
+                        alt="Back Icon"
+                    />
                 </div>
                 <div className="text-center">
                     <h1 className="font-semibold text-lg text-[#4E4C70]">
@@ -40,7 +46,12 @@ const Ticker: NextPage = () => {
                 </div>
             </header>
             <div className="pt-24 px-5 space-y-3 font-sans z-20 absolute">
-                <img src="assets/icon/ticker-model-1.png" alt="ticker" />
+                <Image
+                    priority
+                    loading="eager"
+                    src={TickerModel}
+                    alt="ticker"
+                />
                 <div className="bg-[#CEDEF5] text-[#0B76FF] font-semibold grid place-content-center w-[5.5rem] py-1.5 text-lg rounded-2xl">
                     USDT
                 </div>
@@ -56,10 +67,12 @@ const Ticker: NextPage = () => {
                                         key={idx}
                                         className="bg-white h-[6.5rem] aspect-[20/26] w-max rounded-xl flex justify-between flex-col items-center p-3"
                                     >
-                                        <img
+                                        <Image
                                             src={`https://s3-symbol-logo.tradingview.com/crypto/XTVC${
                                                 coin === "GRT" ? "GRAPH" : coin
                                             }--big.svg`}
+                                            width={44}
+                                            height={44}
                                             className="h-11 w-11 object-contain rounded-full"
                                             alt="icon"
                                         />
