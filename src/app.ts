@@ -7,7 +7,12 @@ const PORT = 4000;
 async function main() {
     const app = express();
 
-    app.use(cors());
+    app.use(
+        cors({
+            origin: ["https://ticker.doji.space", "http://localhost:3000"],
+            credentials: true,
+        })
+    );
     app.use(express.json());
 
     app.get("/", (req, res) => {
