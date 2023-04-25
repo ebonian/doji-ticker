@@ -52,7 +52,7 @@ const PWAContext: React.FC<PWAProps> = ({ children }) => {
         }
     }, []);
 
-    if (process.env.NODE_ENV !== "development" ? !isInstalled : isInstalled) {
+    if (process.env.NODE_ENV === "development" ? !isInstalled : isInstalled) {
         return (
             <PWAState.Provider value={{ os, setOs, getMobileOperatingSystem }}>
                 {children}
