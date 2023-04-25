@@ -2,6 +2,7 @@ import Image from "next/image";
 import Settings from "../../public/assets/icon/settings.svg";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 const Tabbar: React.FC = () => {
     const router = useRouter();
@@ -26,16 +27,20 @@ const Tabbar: React.FC = () => {
         >
             <div className="flex justify-between items-center w-full px-8 pt-4">
                 <div className="flex items-center space-x-12">
-                    <div className="font-bold text-xl text-[#6A6AFF]">
-                        Tickers
-                    </div>
+                    <Link href="/">
+                        <a className="font-bold text-xl text-[#6A6AFF]">
+                            Tickers
+                        </a>
+                    </Link>
                     <div className="font-bold text-xl text-[#BEBEE0]">
                         Coins
                     </div>
                 </div>
-                <div className="bg-[#D4C7ED] rounded-full w-10 h-10 grid place-content-center">
-                    <Image src={Settings} alt="Settings Icon" />
-                </div>
+                <Link href="/settings">
+                    <a className="bg-[#D4C7ED] rounded-full w-10 h-10 grid place-content-center">
+                        <Image src={Settings} alt="Settings Icon" />
+                    </a>
+                </Link>
             </div>
         </div>
     );

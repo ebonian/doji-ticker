@@ -22,4 +22,21 @@ const sendData = async (endpoint: string, buffer: Uint8Array) => {
     }
 };
 
+export const sendTickerServer = async (url: string, data: any) => {
+    try {
+        const result = await axios
+            .post(url, data, {
+                headers: {
+                    "Content-type": "application/json",
+                },
+            })
+            .then((res) => res.data)
+            .catch(() => null);
+
+        return result;
+    } catch (error) {
+        throw error;
+    }
+};
+
 export default sendData;

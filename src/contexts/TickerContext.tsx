@@ -8,6 +8,8 @@ export const TickerContext = createContext({
         },
     ],
     setTickers: (tickers: any) => {},
+    tickerServerURL: "",
+    setTickerServerURL: (tickerServerURL: string) => {},
 });
 
 const TickerProvider: React.FC<{ children: React.ReactNode }> = ({
@@ -26,6 +28,8 @@ const TickerProvider: React.FC<{ children: React.ReactNode }> = ({
         },
     ]);
 
+    const [tickerServerURL, setTickerServerURL] = useState<string>("");
+
     // effects
     useEffect(() => {
         const tickers = localStorage.getItem("tickers");
@@ -39,7 +43,9 @@ const TickerProvider: React.FC<{ children: React.ReactNode }> = ({
     }, [tickers]);
 
     return (
-        <TickerContext.Provider value={{ tickers, setTickers }}>
+        <TickerContext.Provider
+            value={{ tickers, setTickers, tickerServerURL, setTickerServerURL }}
+        >
             {children}
         </TickerContext.Provider>
     );
