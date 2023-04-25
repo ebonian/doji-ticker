@@ -2,11 +2,14 @@ import type { NextPage } from "next";
 import { useContext, useState } from "react";
 import { TickerContext } from "../contexts/TickerContext";
 import TickerBlock from "../components/TickerBlock";
+import { getPropertyValue } from "../libs/ctrl/control";
 
 const Home: NextPage = () => {
     const { tickers } = useContext(TickerContext);
 
     const [showProvisionModal, setShowProvisionModal] = useState(false);
+
+    const [error, setError] = useState(false);
 
     return (
         <>
@@ -41,6 +44,18 @@ const Home: NextPage = () => {
                         />
                     ))}
                 </div>
+                <button
+                    onClick={async () => {
+                        await getPropertyValue(2)
+                            .then(() => setError(false))
+                            .catch(() => setError(true));
+                    }}
+                >
+                    click me
+                </button>
+                <br />
+                <br />
+                {error && "error"}
             </div>
         </>
     );
