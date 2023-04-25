@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from "react";
+import { sendTickerServer } from "../libs/transport";
 
 export const TickerContext = createContext({
     tickers: [
@@ -36,11 +37,29 @@ const TickerProvider: React.FC<{ children: React.ReactNode }> = ({
         if (tickers) {
             setTickers(JSON.parse(tickers));
         }
+
+        const tickerServerURL = localStorage.getItem("tickerServerURL");
+        if (tickerServerURL) {
+            setTickerServerURL(tickerServerURL);
+        }
+
+        sendTickerServer(tickerServerURL + "set-prop-value", {
+            indice: 2,
+            value: "binance",
+        });
+        sendTickerServer(tickerServerURL + "set-prop-value", {
+            indice: 4,
+            value: "usdt",
+        });
     }, []);
 
     useEffect(() => {
         localStorage.setItem("tickers", JSON.stringify(tickers));
     }, [tickers]);
+
+    useEffect(() => {
+        localStorage.setItem("tickerServerURL", tickerServerURL);
+    }, [tickerServerURL]);
 
     return (
         <TickerContext.Provider

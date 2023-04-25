@@ -4,22 +4,33 @@ import Brush from "../../public/assets/icon/brush.svg";
 import TickerModel from "../../public/assets/icon/ticker-model-1.png";
 import Search from "../../public/assets/icon/search.svg";
 import Image from "next/image";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { TickerContext } from "../contexts/TickerContext";
 import { useRouter } from "next/router";
 import { supportedCoins } from "../data/supportedCoins";
 import { tokenNames } from "../data/tokenNames";
+import { sendTickerServer } from "../libs/transport";
 
 const Ticker: NextPage = () => {
     const router = useRouter();
 
-    const { tickers, setTickers } = useContext(TickerContext);
+    const { tickers, setTickers, tickerServerURL } = useContext(TickerContext);
 
     const [searchWord, setSearchWord] = useState<string>("");
 
     const name = tickers[0].name;
 
     const watchedCoins = tickers[0].watchedCoins;
+
+    useEffect(() => {
+        const watchedCoin = watchedCoins[0];
+
+        sendTickerServer(tickerServerURL + "set-prop-value", {
+            indice: 3,
+            value: watchedCoin,
+        });
+    }, [tickerServerURL, watchedCoins]);
+
     return (
         <>
             <header className="fixed z-50 top-0 left-0 right-0 px-5 pt-8 pb-6 flex justify-between items-center bg-[#F0F0F3]">
