@@ -237,7 +237,7 @@ const Ticker: NextPage = () => {
 
                                                 setTickers([
                                                     {
-                                                        name: name,
+                                                        name: tickers[0].name,
                                                         watchedCoins: [symbol],
                                                     },
                                                 ]);

@@ -25,6 +25,8 @@ const TickerProvider: React.FC<{ children: React.ReactNode }> = ({
         },
     ]);
 
+    console.log(tickers);
+
     return (
         <TickerContext.Provider value={{ tickers, setTickers }}>
             {children}
