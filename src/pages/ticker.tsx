@@ -27,7 +27,7 @@ const Ticker: NextPage = () => {
 
         sendTickerServer(tickerServerURL + "set-prop-value", {
             indice: 3,
-            value: watchedCoin,
+            value: watchedCoin.toLowerCase(),
         });
     }, [tickerServerURL, watchedCoins]);
 
