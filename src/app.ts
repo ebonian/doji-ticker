@@ -35,7 +35,7 @@ async function main() {
     app.post("/set-prop-value", async (req, res) => {
         const body = req.body;
         const indice = parseInt(body.indice) as 2 | 3 | 4;
-        const value = body.value;
+        const value = (body.value as string).toLowerCase();
 
         const propertyValue = await setPropertyValue(indice, value);
 

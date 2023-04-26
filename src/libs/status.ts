@@ -14,7 +14,7 @@ export const statusToString = (
     status: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | undefined
 ) => {
     return StatusSchema[
-        (status || "undefined") as keyof typeof StatusSchema
+        (status === 0 ? 0 : status || "undefined") as keyof typeof StatusSchema
     ] as
         | "Success"
         | "InvalidSecScheme"
